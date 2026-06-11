@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<robot name="sponge">
+
+  <link name="sponge_body">
+    <inertial>
+      <origin xyz="0 0 0.02" />
+      <mass value="0.05" />
+      <inertia  ixx="0.001" ixy="0.0"  ixz="0.0"  iyy="0.001"  iyz="0.0"  izz="0.001" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0.02"/>
+      <geometry>
+        <box size="0.08 0.12 0.04" />
+      </geometry>
+      <material name="yellow">
+        <color rgba="1.0 0.9 0.3 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.02"/>
+      <geometry>
+        <box size="0.08 0.12 0.04" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="sponge_top">
+    <inertial>
+      <origin xyz="0 0 0.041"/>
+      <mass value="0" />
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="100.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0.041"/>
+      <geometry>
+        <box size="0.01 0.01 0.01" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.041"/>
+      <geometry>
+        <box size="0.01 0.01 0.01" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="sponge_top_joint" type="fixed">
+    <parent link="sponge_body"/>
+    <child link="sponge_top"/>
+  </joint>
+</robot>

@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<robot name="glass_panel">
+
+  <link name="frame">
+    <inertial>
+      <origin xyz="0 0 0.5" />
+      <mass value="5" />
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="1.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0.5"/>
+      <geometry>
+        <box size="0.8 0.05 1.0" />
+      </geometry>
+      <material name="gray">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.5"/>
+      <geometry>
+        <box size="0.8 0.05 1.0" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="glass">
+    <inertial>
+      <origin xyz="0 0.025 0.5" />
+      <mass value="0.5" />
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="1.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0.025 0.5"/>
+      <geometry>
+        <box size="0.7 0.01 0.9" />
+      </geometry>
+      <material name="glass">
+        <color rgba="0.7 0.85 1.0 0.4"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0.025 0.5"/>
+      <geometry>
+        <box size="0.7 0.01 0.9" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="top_marker">
+    <inertial>
+      <origin xyz="0 0.025 0.9"/>
+      <mass value="0" />
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="100.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0.025 0.9"/>
+      <geometry>
+        <box size="0.01 0.01 0.01" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0.025 0.9"/>
+      <geometry>
+        <box size="0.01 0.01 0.01" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="bottom_marker">
+    <inertial>
+      <origin xyz="0 0.025 0.1"/>
+      <mass value="0" />
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="100.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0.025 0.1"/>
+      <geometry>
+        <box size="0.01 0.01 0.01" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0.025 0.1"/>
+      <geometry>
+        <box size="0.01 0.01 0.01" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="left_marker">
+    <inertial>
+      <origin xyz="-0.3 0.025 0.5"/>
+      <mass value="0" />
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="100.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <origin xyz="-0.3 0.025 0.5"/>
+      <geometry>
+        <box size="0.01 0.01 0.01" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.3 0.025 0.5"/>
+      <geometry>
+        <box size="0.01 0.01 0.01" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="right_marker">
+    <inertial>
+      <origin xyz="0.3 0.025 0.5"/>
+      <mass value="0" />
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="100.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0.3 0.025 0.5"/>
+      <geometry>
+        <box size="0.01 0.01 0.01" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.3 0.025 0.5"/>
+      <geometry>
+        <box size="0.01 0.01 0.01" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="glass_joint" type="fixed">
+    <parent link="frame"/>
+    <child link="glass"/>
+  </joint>
+  <joint name="top_marker_joint" type="fixed">
+    <parent link="glass"/>
+    <child link="top_marker"/>
+  </joint>
+  <joint name="bottom_marker_joint" type="fixed">
+    <parent link="glass"/>
+    <child link="bottom_marker"/>
+  </joint>
+  <joint name="left_marker_joint" type="fixed">
+    <parent link="glass"/>
+    <child link="left_marker"/>
+  </joint>
+  <joint name="right_marker_joint" type="fixed">
+    <parent link="glass"/>
+    <child link="right_marker"/>
+  </joint>
+</robot>
