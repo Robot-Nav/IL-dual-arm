@@ -74,7 +74,12 @@ Baxter 双臂夹持海绵/抹布，在**水平桌面**上执行清洁操作：
 
 ### 任务二：擦玻璃（Clean Glass）
 
-Baxter 双臂在**竖直玻璃面板**上执行清洁操作：
+Baxter 双臂在**竖直玻璃面板**上执行清洁操作：如下：
+
+
+https://github.com/user-attachments/assets/94b4e737-82cc-4103-956f-8eb269328c14
+
+
 
 | 步骤 | 基元名称 | 功能描述 |
 |------|---------|---------|
@@ -371,6 +376,6 @@ python GenerateProjections.py -trainiters 1 -startindex 0 -datasize 55 -features
 
 ---
 
-## License
+## 致谢
 
-This project is licensed under the MIT License.
+开源项目：https://github.com/Rose-STL-Lab/HDR-IL
